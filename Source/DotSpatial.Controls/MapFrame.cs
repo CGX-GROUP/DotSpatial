@@ -1088,7 +1088,7 @@ namespace DotSpatial.Controls
                 Matrix oldMatrix = g.Transform;
                 try
                 {
-                    g.TranslateTransform(increaseTargetRectangle.X, increaseTargetRectangle.Y);
+                    g.TranslateTransform(targetRectangle.X, targetRectangle.Y);
 
                     foreach (IMapLayer ml in Layers)
                     {
