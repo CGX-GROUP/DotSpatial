@@ -1071,8 +1071,8 @@ namespace DotSpatial.Controls
         public virtual void Print(Graphics device, Rectangle targetRectangle, Extent targetEnvelope, int iFactor = 1 )
         {
             Rectangle increaseTargetRectangle = new Rectangle(targetRectangle.X, targetRectangle.Y, targetRectangle.Width, targetRectangle.Height);
-            increaseTargetRectangle.X *= iFactor;
-            increaseTargetRectangle.Y *= iFactor;
+            increaseTargetRectangle.X = 0;
+            increaseTargetRectangle.Y = 0;
             increaseTargetRectangle.Width *= iFactor;
             increaseTargetRectangle.Height *= iFactor;
 
@@ -1088,7 +1088,7 @@ namespace DotSpatial.Controls
                 Matrix oldMatrix = g.Transform;
                 try
                 {
-                    g.TranslateTransform(targetRectangle.X, targetRectangle.Y);
+                    g.TranslateTransform(increaseTargetRectangle.X, increaseTargetRectangle.Y);
 
                     foreach (IMapLayer ml in Layers)
                     {

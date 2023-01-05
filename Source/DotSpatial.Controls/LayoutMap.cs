@@ -186,9 +186,9 @@ namespace DotSpatial.Controls
         public override void Draw(Graphics g, bool printing)
         {
             // JME A finir print vectoriel
-            if (printing == false || _printSVG == false)
+            //if (printing == false || _printSVG == false)
             {
-                DotSpatial.Symbology.Core.Constants.IsPrinting = false;
+                DotSpatial.Symbology.Core.Constants.IsPrinting = printing;
 
                 //CGX
                 int iResolution = 96;
@@ -207,7 +207,6 @@ namespace DotSpatial.Controls
 
                 if (_buffer == null)
                 {
-                    //_buffer = new Bitmap(Convert.ToInt32(Size.Width * (iResolution / 100)), Convert.ToInt32(Size.Height * (iResolution / 100)), PixelFormat.Format32bppArgb);
                     int iWidth = (int)(Size.Width * iResolution / 100F);
                     int iHeight = (int)(Size.Height * iResolution / 100F);
                     _buffer = new Bitmap(iWidth, iHeight);
@@ -218,12 +217,12 @@ namespace DotSpatial.Controls
                 }
                 g.DrawImage(_buffer, Rectangle);
             }
-            else
-            {
-                DotSpatial.Symbology.Core.Constants.IsPrinting = true;
-                MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent(), 6);
+            //else
+            //{
+            //    DotSpatial.Symbology.Core.Constants.IsPrinting = true;
+            //    MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent(), 1);
                 DotSpatial.Symbology.Core.Constants.IsPrinting = false;
-            }
+            //}
             // JME A finir print vectoriel
         }
 
