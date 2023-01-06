@@ -17,8 +17,6 @@ namespace DotSpatial.Controls
     {
         #region Fields
 
-        private static bool _printSVG = true;
-
         private Bitmap _buffer;
         private Envelope _envelope;
         private bool _extentChanged = true;
@@ -56,23 +54,6 @@ namespace DotSpatial.Controls
         #endregion
 
         #region Properties
-
-        /// <summary>
-        /// Gets or sets a value indicating whether SVG are printed
-        /// </summary>
-        public static bool PrintSVG
-        {
-            get
-            {
-                return _printSVG;
-            }
-
-            set
-            {
-                _printSVG = value;
-            }
-        }
-
         /// <summary>
         /// Gets or sets the geographic envelope to be shown by the layout.
         /// </summary>
@@ -186,11 +167,11 @@ namespace DotSpatial.Controls
         public override void Draw(Graphics g, bool printing)
         {
             // JME A finir print vectoriel
-            if (printing == false || _printSVG == false)
+            if (!printing)
             {
                 DotSpatial.Symbology.Core.Constants.IsPrinting = false;
 
-                //CGX
+                // CGX
                 int iResolution = 96;
 
                 g.FillRectangle(new SolidBrush(Background.GetFillColor()), new RectangleF(this.LocationF.X, this.LocationF.Y, Size.Width, Size.Height));
@@ -207,7 +188,6 @@ namespace DotSpatial.Controls
 
                 if (_buffer == null)
                 {
-                    //_buffer = new Bitmap(Convert.ToInt32(Size.Width * (iResolution / 100)), Convert.ToInt32(Size.Height * (iResolution / 100)), PixelFormat.Format32bppArgb);
                     int iWidth = (int)(Size.Width * iResolution / 100F);
                     int iHeight = (int)(Size.Height * iResolution / 100F);
                     _buffer = new Bitmap(iWidth, iHeight);
@@ -226,6 +206,7 @@ namespace DotSpatial.Controls
             }
             // JME A finir print vectoriel
         }
+
 
         /// <summary>
         /// Pans the map

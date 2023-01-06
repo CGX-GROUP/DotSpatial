@@ -600,7 +600,7 @@ namespace DotSpatial.Controls
                 {
                     double dReferenceScale = (MapFrame as IMapFrame).ReferenceScale;
                     double dCurrentScale = (MapFrame as IMapFrame).CurrentScale;
-                    scale = dReferenceScale / dCurrentScale;
+                    scale = (dReferenceScale / dCurrentScale) * scale;
                 } // Fin CGX
 
                 foreach (IPattern pattern in ps.Patterns)

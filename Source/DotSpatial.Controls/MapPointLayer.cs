@@ -564,7 +564,7 @@ namespace DotSpatial.Controls
             {
                 double dReferenceScale = (MapFrame as IMapFrame).ReferenceScale;
                 double dCurrentScale = (MapFrame as IMapFrame).CurrentScale;
-                scaleSize = dReferenceScale / dCurrentScale;
+                scaleSize = (dReferenceScale / dCurrentScale) * scaleSize;
             } // Fin CGX
 
             Matrix shift = origTransform.Clone();

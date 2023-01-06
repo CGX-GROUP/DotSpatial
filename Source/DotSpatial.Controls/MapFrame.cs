@@ -1068,11 +1068,10 @@ namespace DotSpatial.Controls
         /// <param name="device">Graphics object used for drawing.</param>
         /// <param name="targetRectangle">Rectangle to draw the content to.</param>
         /// <param name="targetEnvelope">the extents to draw to the target rectangle</param>
-        public virtual void Print(Graphics device, Rectangle targetRectangle, Extent targetEnvelope, int iFactor = 1 )
+        /// <param name="iFactor"></param>
+        public virtual void Print(Graphics device, Rectangle targetRectangle, Extent targetEnvelope, int iFactor = 1)
         {
-            Rectangle increaseTargetRectangle = new Rectangle(targetRectangle.X, targetRectangle.Y, targetRectangle.Width, targetRectangle.Height);
-            increaseTargetRectangle.X *= iFactor;
-            increaseTargetRectangle.Y *= iFactor;
+            Rectangle increaseTargetRectangle = new Rectangle(0, 0, targetRectangle.Width, targetRectangle.Height);
             increaseTargetRectangle.Width *= iFactor;
             increaseTargetRectangle.Height *= iFactor;
 
@@ -1080,7 +1079,7 @@ namespace DotSpatial.Controls
             using (Graphics g = Graphics.FromImage(memory))
             {
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
                 g.CompositingQuality = CompositingQuality.HighQuality;
 
@@ -1088,7 +1087,7 @@ namespace DotSpatial.Controls
                 Matrix oldMatrix = g.Transform;
                 try
                 {
-                    g.TranslateTransform(targetRectangle.X, targetRectangle.Y);
+                    g.TranslateTransform(increaseTargetRectangle.X, increaseTargetRectangle.Y);
 
                     foreach (IMapLayer ml in Layers)
                     {
@@ -1106,7 +1105,7 @@ namespace DotSpatial.Controls
             }
 
             device.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            device.SmoothingMode = SmoothingMode.HighQuality;
+            device.SmoothingMode = SmoothingMode.AntiAlias;
             device.PixelOffsetMode = PixelOffsetMode.HighQuality;
             device.CompositingQuality = CompositingQuality.HighQuality;
             device.DrawImage(
