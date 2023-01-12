@@ -1104,27 +1104,12 @@ namespace DotSpatial.Controls
                 }
             }
 
-            if (iFactor > 1)
-            {
-                Rectangle imageRectangle = new Rectangle(0, 0, targetRectangle.Width, targetRectangle.Height);
-                Bitmap img = new Bitmap(imageRectangle.Width, imageRectangle.Height);
-                using (Graphics g = Graphics.FromImage(img))
-                {
-                    g.DrawImage(memory, 0, 0, targetRectangle.Width, targetRectangle.Height);
-                }
-                memory = img;
-            }
-
-            device.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            device.SmoothingMode = SmoothingMode.AntiAlias;
-            device.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            device.CompositingQuality = CompositingQuality.HighQuality;
-            device.DrawImageUnscaled(
-                    memory
-                    , targetRectangle.X
-                    , targetRectangle.Y
-                    , targetRectangle.Width
-                    , targetRectangle.Height);
+            device.DrawImage(
+                    memory,
+                    targetRectangle.X,
+                    targetRectangle.Y,
+                    targetRectangle.Width,
+                    targetRectangle.Height);
         }
 
         /// <summary>

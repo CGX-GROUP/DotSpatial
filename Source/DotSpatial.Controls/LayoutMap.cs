@@ -5,6 +5,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using DotSpatial.Data;
 using GeoAPI.Geometries;
 
@@ -201,7 +202,15 @@ namespace DotSpatial.Controls
             else
             {
                 DotSpatial.Symbology.Core.Constants.IsPrinting = true;
-                MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent(), 6);
+
+                int iFactor = 1;
+                while ((Size.Width * iFactor) < 4000)
+                {
+                    iFactor += 1;
+                }
+
+                MapControl.Print(g, new Rectangle(Location.X, Location.Y, Convert.ToInt32(Size.Width), Convert.ToInt32(Size.Height)), _envelope.ToExtent(), iFactor);
+
                 DotSpatial.Symbology.Core.Constants.IsPrinting = false;
             }
             // JME A finir print vectoriel
