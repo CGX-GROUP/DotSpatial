@@ -1104,16 +1104,12 @@ namespace DotSpatial.Controls
                 }
             }
 
-            device.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            device.SmoothingMode = SmoothingMode.AntiAlias;
-            device.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            device.CompositingQuality = CompositingQuality.HighQuality;
             device.DrawImage(
-                    memory
-                    , targetRectangle.X
-                    , targetRectangle.Y
-                    , targetRectangle.Width
-                    , targetRectangle.Height);
+                    memory,
+                    targetRectangle.X,
+                    targetRectangle.Y,
+                    targetRectangle.Width,
+                    targetRectangle.Height);
         }
 
         /// <summary>
