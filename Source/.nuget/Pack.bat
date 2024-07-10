@@ -1,10 +1,11 @@
 del *.nupkg
 
-Set NugetVersion=2.0.0.0%1
-Set PackageVersion=2.0.0.0%1
-set GdalVersion=3.3.1.39
+if not defined NUGET_VERSION ( set "NUGET_VERSION=2.0.1.0" )
+if not defined NugetVersion ( set "NugetVersion=%NUGET_VERSION%" )
+if not defined PackageVersion ( set "PackageVersion=%NUGET_VERSION%" )
+set GdalVersion=3.3.1.7
 
-if not exist "..\packages\gdal_MSVC1910.%GdalVersion%" (
+if not exist "..\packages\gdal_MSVC1936.%GdalVersion%" (
 	echo Not found gdal version %GdalVersion%
 	exit /b 1
 )
