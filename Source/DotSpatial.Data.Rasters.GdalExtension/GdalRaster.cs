@@ -307,6 +307,14 @@ namespace DotSpatial.Data.Rasters.GdalExtension
             }
         }
 
+        /// <inheritdoc />
+        protected override void Dispose(bool disposeManagedResources)
+        {
+            Close();
+
+            base.Dispose(disposeManagedResources);
+        }
+
         /// <summary>
         /// Copies the fileName.
         /// </summary>
