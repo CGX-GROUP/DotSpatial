@@ -259,7 +259,7 @@ namespace DotSpatial.Symbology
                 }
             }
 
-            Regex r = new Regex(@"\[(\d+|\w+)\]"); // all fields in [] that contain only word characters and numbers
+            Regex r = new Regex(@"\[([\w ]+)\]"); // all fields in [] that contain only word characters,numbers and space
             var matches = r.Matches(s);
             for (int i = matches.Count - 1; i >= 0; i--)
             {
