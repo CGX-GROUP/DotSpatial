@@ -35,30 +35,12 @@ namespace DotSpatial.Serialization
         {
             List<Type> result = new List<Type>();
 
-            var dlls = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll", SearchOption.AllDirectories);
-			
-
+            var dlls = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll", SearchOption.AllDirectories).Where(x => x.Contains("DotSpatial.Serialization"));
             foreach (string assemblyPath in dlls)
             {
-                Assembly assembly;
-
                 try
                 {
-                    assembly = Assembly.LoadFrom(assemblyPath);
-                }
-                catch (BadImageFormatException)
-                {
-                    // This is not a problem, we just need to ignore these native assemblies
-                    continue;
-                }
-                catch (FileLoadException)
-                {
-                    // ignore
-                    continue;
-                }
-
-                try
-                {
+                    Assembly assembly = Assembly.LoadFrom(assemblyPath);
                     if (baseType.IsGenericTypeDefinition)
                     {
                         result.AddRange(assembly.GetTypes().Where(t => t.BaseType != null && t.BaseType.IsGenericType && t.BaseType.GetGenericTypeDefinition().Equals(baseType)));
