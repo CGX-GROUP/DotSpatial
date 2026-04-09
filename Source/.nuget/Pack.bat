@@ -3,13 +3,13 @@ del *.nupkg
 if not defined NUGET_VERSION ( set "NUGET_VERSION=2.0.1.0" )
 if not defined NugetVersion ( set "NugetVersion=%NUGET_VERSION%" )
 if not defined PackageVersion ( set "PackageVersion=%NUGET_VERSION%" )
-set GdalVersion=3.12.0.57
+set GdalVersion=3.12.0.58
 
 set PLATFORM=x64
 
 if not exist "..\packages\gdal_MSVC1936.%GdalVersion%" (
-	echo Not found gdal version %GdalVersion%
-	exit /b 1
+    echo Not found gdal version %GdalVersion%
+    exit /b 1
 )
 
 nuget pack ..\DotSpatial.Controls\DotSpatial.Controls.csproj -version "%NugetVersion%" -Properties "PackageVersion=%PackageVersion%";"Configuration=Release";"Platform=%PLATFORM%"
