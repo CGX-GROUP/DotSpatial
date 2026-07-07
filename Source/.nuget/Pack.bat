@@ -3,7 +3,7 @@ del *.nupkg
 if not defined NUGET_VERSION ( set "NUGET_VERSION=2.0.1.0" )
 if not defined NugetVersion ( set "NugetVersion=%NUGET_VERSION%" )
 if not defined PackageVersion ( set "PackageVersion=%NUGET_VERSION%" )
-set GdalVersion=3.12.0.59
+set GdalVersion=3.12.0.60
 
 set PLATFORM=x64
 

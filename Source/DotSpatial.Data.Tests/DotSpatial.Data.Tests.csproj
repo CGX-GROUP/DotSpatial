@@ -102,19 +102,19 @@
       <HintPath>$(SolutionDir)packages\DotSpatial.NetTopologySuite.1.14.4\lib\net40-client\DotSpatial.NetTopologySuite.dll</HintPath>
     </Reference>
     <Reference Include="gdalconst_csharp, Version=3.12.0.0, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
-      <HintPath>..\packages\gdal_MSVC1936.3.12.0.59\lib\netstandard2.0\Release\gdalconst_csharp.dll</HintPath>
+      <HintPath>..\packages\gdal_MSVC1936.3.12.0.60\lib\netstandard2.0\Release\gdalconst_csharp.dll</HintPath>
     </Reference>
     <Reference Include="gdal_csharp, Version=3.12.0.0, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
-      <HintPath>..\packages\gdal_MSVC1936.3.12.0.59\lib\netstandard2.0\Release\gdal_csharp.dll</HintPath>
+      <HintPath>..\packages\gdal_MSVC1936.3.12.0.60\lib\netstandard2.0\Release\gdal_csharp.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.7.1\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="ogr_csharp, Version=3.12.0.0, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
-      <HintPath>..\packages\gdal_MSVC1936.3.12.0.59\lib\netstandard2.0\Release\ogr_csharp.dll</HintPath>
+      <HintPath>..\packages\gdal_MSVC1936.3.12.0.60\lib\netstandard2.0\Release\ogr_csharp.dll</HintPath>
     </Reference>
     <Reference Include="osr_csharp, Version=3.12.0.0, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
-      <HintPath>..\packages\gdal_MSVC1936.3.12.0.59\lib\netstandard2.0\Release\osr_csharp.dll</HintPath>
+      <HintPath>..\packages\gdal_MSVC1936.3.12.0.60\lib\netstandard2.0\Release\osr_csharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -214,9 +214,9 @@ xcopy /s /y /i "$(ProjectDir)Data" "$(TargetDir)Data"</PostBuildEvent>
     <Error Condition="!Exists('..\packages\geos_c_Native_MSVC1936.3.13.1.18\build\netstandard2.0\geos_c_Native_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\geos_c_Native_MSVC1936.3.13.1.18\build\netstandard2.0\geos_c_Native_MSVC1936.targets'))" />
     <Error Condition="!Exists('..\packages\libxml2_Native_MSVC1936.2.14.2.22\build\netstandard2.0\libxml2_Native_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\libxml2_Native_MSVC1936.2.14.2.22\build\netstandard2.0\libxml2_Native_MSVC1936.targets'))" />
     <Error Condition="!Exists('..\packages\spatialite_Native_MSVC1936.5.1.0.36\build\netstandard2.0\spatialite_Native_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\spatialite_Native_MSVC1936.5.1.0.36\build\netstandard2.0\spatialite_Native_MSVC1936.targets'))" />
-    <Error Condition="!Exists('..\packages\gdal_Native_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_Native_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gdal_Native_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_Native_MSVC1936.targets'))" />
-    <Error Condition="!Exists('..\packages\gdal_MSVC1936_wrap.3.12.0.59\build\netstandard2.0\gdal_MSVC1936_wrap.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gdal_MSVC1936_wrap.3.12.0.59\build\netstandard2.0\gdal_MSVC1936_wrap.targets'))" />
-    <Error Condition="!Exists('..\packages\gdal_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gdal_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_MSVC1936.targets'))" />
+    <Error Condition="!Exists('..\packages\gdal_Native_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_Native_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gdal_Native_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_Native_MSVC1936.targets'))" />
+    <Error Condition="!Exists('..\packages\gdal_MSVC1936_wrap.3.12.0.60\build\netstandard2.0\gdal_MSVC1936_wrap.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gdal_MSVC1936_wrap.3.12.0.60\build\netstandard2.0\gdal_MSVC1936_wrap.targets'))" />
+    <Error Condition="!Exists('..\packages\gdal_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_MSVC1936.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gdal_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_MSVC1936.targets'))" />
   </Target>
   <Import Project="..\packages\expat_Native_MSVC1936.2.7.1.17\build\netstandard2.0\expat_Native_MSVC1936.targets" Condition="Exists('..\packages\expat_Native_MSVC1936.2.7.1.17\build\netstandard2.0\expat_Native_MSVC1936.targets')" />
   <Import Project="..\packages\FileGDB_Native_MSVC1936.1.5.4.12\build\netstandard2.0\FileGDB_Native_MSVC1936.targets" Condition="Exists('..\packages\FileGDB_Native_MSVC1936.1.5.4.12\build\netstandard2.0\FileGDB_Native_MSVC1936.targets')" />
@@ -235,9 +235,9 @@ xcopy /s /y /i "$(ProjectDir)Data" "$(TargetDir)Data"</PostBuildEvent>
   <Import Project="..\packages\geos_c_Native_MSVC1936.3.13.1.18\build\netstandard2.0\geos_c_Native_MSVC1936.targets" Condition="Exists('..\packages\geos_c_Native_MSVC1936.3.13.1.18\build\netstandard2.0\geos_c_Native_MSVC1936.targets')" />
   <Import Project="..\packages\libxml2_Native_MSVC1936.2.14.2.22\build\netstandard2.0\libxml2_Native_MSVC1936.targets" Condition="Exists('..\packages\libxml2_Native_MSVC1936.2.14.2.22\build\netstandard2.0\libxml2_Native_MSVC1936.targets')" />
   <Import Project="..\packages\spatialite_Native_MSVC1936.5.1.0.36\build\netstandard2.0\spatialite_Native_MSVC1936.targets" Condition="Exists('..\packages\spatialite_Native_MSVC1936.5.1.0.36\build\netstandard2.0\spatialite_Native_MSVC1936.targets')" />
-  <Import Project="..\packages\gdal_Native_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_Native_MSVC1936.targets" Condition="Exists('..\packages\gdal_Native_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_Native_MSVC1936.targets')" />
-  <Import Project="..\packages\gdal_MSVC1936_wrap.3.12.0.59\build\netstandard2.0\gdal_MSVC1936_wrap.targets" Condition="Exists('..\packages\gdal_MSVC1936_wrap.3.12.0.59\build\netstandard2.0\gdal_MSVC1936_wrap.targets')" />
-  <Import Project="..\packages\gdal_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_MSVC1936.targets" Condition="Exists('..\packages\gdal_MSVC1936.3.12.0.59\build\netstandard2.0\gdal_MSVC1936.targets')" />
+  <Import Project="..\packages\gdal_Native_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_Native_MSVC1936.targets" Condition="Exists('..\packages\gdal_Native_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_Native_MSVC1936.targets')" />
+  <Import Project="..\packages\gdal_MSVC1936_wrap.3.12.0.60\build\netstandard2.0\gdal_MSVC1936_wrap.targets" Condition="Exists('..\packages\gdal_MSVC1936_wrap.3.12.0.60\build\netstandard2.0\gdal_MSVC1936_wrap.targets')" />
+  <Import Project="..\packages\gdal_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_MSVC1936.targets" Condition="Exists('..\packages\gdal_MSVC1936.3.12.0.60\build\netstandard2.0\gdal_MSVC1936.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
